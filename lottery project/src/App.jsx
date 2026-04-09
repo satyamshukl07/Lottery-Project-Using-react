@@ -1,16 +1,19 @@
 import { useState } from 'react'
 import './App.css'
 import Lottery from "./Lottery";
-import TicketNum from "./TicketNum";
+//import Ticket from "./Ticket";
+import {sum } from "./helper";
 
 function App() {
+
+  let winCondition =(ticket) =>{
+    return sum (ticket) === 15;
+  }
   return (
 <>
-<TicketNum num={5}/>
-<TicketNum num={5}/>
-<TicketNum num={5}/>
+<Lottery n = {3}winCondition={winCondition}/>
     </>
   );
 }
 
-export default App
+export default App;
